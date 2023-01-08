@@ -1,0 +1,267 @@
+.hero {
+    margin-top: 8rem;
+    @include responsive(30rem) {
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+    @include flex(row, center, space-between);
+    .hero-name {
+        width: 25rem;
+        z-index: 1;
+        @include responsive(51.25rem) {
+            position: relative;
+        }
+    }
+    .hero-banner {
+        width: 100%;
+        max-width: 46.87rem;
+        @include responsive(30rem) {
+            margin-top: 4rem;
+        }
+    }
+}
+
+.about {
+    @include flex(row, center, space-between);
+    position: relative;
+    z-index: 99;
+    padding-top: 10.12rem;
+    @include responsive(30rem) {
+        flex-direction: column-reverse;
+        padding-top: 4rem;
+    }
+    .social-media {
+        width: 100%;
+        max-width: 29.37rem;
+        position: relative;
+        @include responsive(51.25rem) {
+            height: 21.37rem;
+            @include responsive(30rem) {
+                height: auto;
+                .image-about {
+                    display: none;
+                }
+            }
+        }
+        .image-about {
+            max-width: 80%;
+        }
+        ul {
+            display: flex;
+            padding-top: 1rem;
+            li {
+                padding-right: 1rem;
+            }
+        }
+        &::before {
+            content: '';
+            display: block;
+            width: 21rem;
+            height: 33.5rem;
+            background-color: $featured-color;
+            position: absolute;
+            top: -4.25rem;
+            left: -4.125rem;
+            z-index: -1;
+            @include responsive(51.25rem) {
+                height: 29.5rem;
+                left: -4.25rem;
+            }
+            @include responsive(30rem) {
+                display: none;
+            }
+        }
+    }
+    .about-text {
+        padding-left: 3.5rem;
+        @include responsive(51.25rem) {
+            padding-left: 0;
+            max-width: 50%;
+        }
+        @include responsive(30rem) {
+            max-width: 100%;
+        }
+        h2 {
+            width: 100%;
+            max-width: 20rem;
+            &::after {
+                content: '';
+                display: block;
+                width: 23.62rem;
+                height: 2rem;
+                background-color: $brand-color;
+                margin-top: -1.25rem;
+                @include responsive(51.25rem) {
+                    width: 10.62rem;
+                    height: 1.2rem;
+                    margin-top: -0.725rem;
+                    margin-left: 3.18rem;
+                }
+            }
+        }
+        .about-item {
+            @include flex(row, flex-start, space-between);
+            padding-top: 4.37rem;
+            @include responsive(51.25rem) {
+                display: block;
+                padding-top: 2rem;
+            }
+            .guitar {
+                width: 100%;
+                max-width: 7.68rem;
+                @include responsive(51.25rem) {
+                    display: none;
+                }
+            }
+            .text {
+                max-width: 32.5rem;
+                padding-left: 3rem;
+                @include responsive(51.25rem) {
+                    padding-left: 0;
+                }
+                p {
+                    &:last-child {
+                        margin-top: 2rem;
+                        position: relative;
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 44rem;
+                            height: 10rem;
+                            background-color: $featured-color;
+                            margin-left: 3.125rem;
+                            margin-top: -5.37rem;
+                            z-index: -1;
+                            @include responsive(51.25rem) {
+                                height: 7rem;
+                                margin-top: -4.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.album {
+    .album-cover {
+        margin-top: 10.31rem;
+        background-image: url(../images/bg-album.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        @include responsive(30rem) {
+            margin-top: 4rem;
+            img {
+                max-width: 80%;
+            }
+        }
+    }
+    .btn {
+        max-width: 16rem;
+        display: block;
+        margin: -1.68rem auto 0 auto;
+        background-color: $brand-color;
+        color: $text-color;
+        text-align: center;
+        padding: 1rem 0;
+        transition: all .3s;
+        position: relative;
+        z-index: 1;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover {
+            background-color: $hover-color;
+        }
+    }
+}
+
+.newsletter {
+    @include flex(row, center, space-between);
+    padding-top: 11rem;
+    position: relative;
+    @include responsive(30rem) {
+        padding: 4rem 0;
+    }
+    .newsletter-cover {
+        width: 69%;
+        @include responsive(51.25rem) {
+            width: 80%;
+        }
+        @include responsive(30rem) {
+            display: none;
+        }
+    }
+    .newsletter-content {
+        padding-left: 5rem;
+        @include responsive(51.25rem) {
+            padding-left: 2rem;
+        }
+        h2 {
+            max-width: 25rem;
+            @include responsive(51.25rem) {
+                max-width: 20rem;
+            }
+            @include responsive(30rem) {
+                max-width: 100%;
+                text-align: center;
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 15.06rem;
+                height: 2rem;
+                background-color: $brand-color;
+                margin-left: 2.25rem;
+                margin-top: -1.75rem;
+                @include responsive(51.25rem) {
+                    width: 10.62rem;
+                    height: 1.2rem;
+                    margin-top: -0.725rem;
+                    margin-left: 3.18rem;
+                }
+                @include responsive(30rem) {
+                    margin-left: 0.68rem;
+                }
+            }
+        }
+        form {
+            max-width: 25rem;
+            display: flex;
+            justify-content: baseline;
+            min-height: 3rem;
+            margin-top: 3.93rem;
+            @include responsive(51.25rem) {
+                margin-top: 2.56rem;
+            }
+            input {
+                min-width: 70%;
+                font-family: 'Open sans', sans-serif;
+                font-size: 1rem;
+                color: #453E3E;
+                padding-left: 1rem;
+                &:focus {
+                    outline: 1.5px;
+                    outline-color: $brand-color;
+                    outline-style: solid;
+                }
+            }
+            button {
+                min-width: 30%;
+                background-color: $brand-color;
+                font-family: 'Open sans', sans-serif;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: $text-color;
+                cursor: pointer;
+                transition: all .3s;
+                &:hover {
+                    background-color: $hover-color;
+                }
+            }
+        }
+    }
+}
