@@ -1,0 +1,140 @@
+header {
+    // padding: 2.5rem 0;
+    .menu {
+        background-color: $background-color;
+        padding: 1.5rem 0;
+        @include responsive(51.25rem) {
+            display: none;
+        }
+        &.active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $featured-color;
+            z-index: 999;
+        }
+        nav {
+            @include flex(row, center, space-between);
+            ul {
+                @include flex(row, center, space-between);
+                li {
+                    &:not(:first-child) {
+                        margin-left: 1.5rem;
+                    }
+                    a {
+                        &.active {
+                            border-bottom: 0.05rem solid $text-color;
+                        }
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 0%;
+                            height: 0.05rem;
+                            background: $text-color;
+                            transition: 0.5s;
+                        }
+                        &:hover {
+                            &::after {
+                                content: '';
+                                display: block;
+                                width: 100%;
+                                height: 0.05rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .link {
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0%;
+                    height: 0.05rem;
+                    background: $text-color;
+                    transition: 0.5s;
+                }
+                &:hover::after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 0.05rem;
+                    background: $text-color;
+                    transition: 0.5s;
+                }
+            }
+            @include responsive(51.25rem) {
+                ul,
+                .link {
+                    display: none !important;
+                }
+            }
+        }
+        img {
+            @include responsive(51.25rem) {
+                display: none;
+            }
+        }
+    }
+    .menu-mobile {
+        display: none;
+        position: relative;
+        height: 6.5rem;
+        @include responsive(51.25rem) {
+            display: block;
+            &.active {
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 9999;
+                background-color: $featured-color;
+            }
+            .header-mobile {
+                @include flex(row, center, space-between);
+                padding: 2.5rem 1.25rem;
+                img,
+                .menu-burger {
+                    z-index: 99999;
+                }
+                .close-button {
+                    display: none;
+                }
+            }
+            .nav-mobile {
+                opacity: 0;
+                pointer-events: none;
+                transform: translateX(100%);
+                transition: 0.5s;
+                &.active {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: $background-color;
+                    width: 100%;
+                    height: 100vh;
+                    z-index: 9999;
+                    opacity: 1;
+                    pointer-events: all;
+                    transform: translateX(0%);
+                    ul {
+                        @include flex(column, flex-end, flex-end);
+                        padding-top: 2.5rem;
+                        li {
+                            a {
+                                display: block;
+                                margin: 3vw 5vw;
+                                transition: opacity 250ms cubic-bezier(.4, 0, .2, 1);
+                                font-size: 6vmin;
+                                color: $text-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

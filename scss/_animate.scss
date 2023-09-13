@@ -1,0 +1,15 @@
+h1 {
+    transform: translate3d(-1100px, 0, 0);
+    &.animate {
+        transform: translate3d(0px, 0, 0);
+        transition: 3s;
+    }
+}
+
+.text {
+    opacity: 0;
+    &.animate {
+        opacity: 1;
+        transition: 3s;
+    }
+}

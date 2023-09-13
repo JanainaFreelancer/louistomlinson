@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Integral';
+    src: url(../font/IntegralCF-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: 'Integra Regular';
+    src: url(../font/IntegralCF-Regular.otf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.31rem;
+    color: $text-color;
+}
+
+h1,
+h2 {
+    font-family: 'Integral';
+    color: $text-color;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 6.75rem;
+    line-height: 8.125rem;
+    @include responsive(51.25rem) {
+        font-size: 3rem;
+        line-height: 3rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    @include responsive(30rem) {
+        text-align: center;
+    }
+}
+
+h1::selection,
+h2::selection,
+.liinks::selection,
+p::selection,
+a::selection,
+img::selection,
+body::selection {
+    background-color: $hover-color;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 3.62rem;
+    @include responsive(51.25rem) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+.links {
+    font-family: 'Integra Regular';
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
